@@ -1,0 +1,88 @@
+StoryLens - Multi-modal Photo Story Generator
+What They Build:
+
+Users upload a photo (vacation, birthday, random snapshot).
+AI (model: microsoft/kosmos-2) auto-generates a creative short story or poem inspired by the image.
+Add audio narration in AI-generated voice (coqui/xtts-v2) for sharing.
+
+StoryLens – Multi-modal Photo Story Generator is an AI-powered project that turns photos into engaging stories or poems with optional audio narration. Here's what it's about:
+
+📸 What It Does:
+Photo Upload:
+Users upload any image – e.g., a vacation pic, birthday snap, or random memory.
+
+AI-Powered Story Generation:
+The image is analyzed using Microsoft's Kosmos-2, a vision-language model that understands both image content and text. It creates a creative story or poem based on what it sees in the photo.
+
+Voice Narration (Optional):
+Using Coqui's XTTS-v2, the text output is converted into a natural-sounding audio narration — which can even mimic a specific voice or emotion.
+🔁 Workflow Summary:
+Input: User uploads an image.
+
+Here’s the workflow for the StoryLens – Multi-modal Photo Story Generator:
+
+🛠️ StoryLens Workflow
+Step 1: User Uploads Photo
+The user selects and uploads an image (e.g., .jpg, .png) via the frontend UI.
+
+Step 2: Image Captioning / Understanding
+The backend sends the image to the microsoft/kosmos-2 model.
+
+Kosmos-2 analyzes the photo and generates:
+
+Descriptive captions
+
+A creative short story or poem based on the image
+
+Step 3 (Optional): Text-to-Speech Generation
+The generated story is passed to coqui/xtts-v2, a text-to-speech model.
+
+Output: An audio file narrating the story (with optional cloned or celebrity-like voice).
+
+Step 4: Output Display
+The frontend displays:
+
+📖 The AI-generated story or poem
+
+🔊 A playable audio narration
+
+Option to download or share
+
+🔄 Workflow Diagram (Text Version)
+scss
+Copy
+Edit
+[User Photo Upload]
+        ↓
+[Vision-Language Model: microsoft/kosmos-2]
+        ↓
+[Generated Story or Poem]
+        ↓                         ↘
+(Optional) [TTS: coqui/xtts-v2]   →   [Display Text + Audio]
+        ↓
+   [Audio Narration]
+✅ Tech Stack Summary
+Component	Tool/Model	Purpose
+Frontend UI	React / HTML/CSS	Image upload + output display
+Image Understanding	microsoft/kosmos-2	Story/poem generation from image
+Voice Narration (TTS)	coqui/xtts-v2	Converts text to human-like voice
+Backend API	Flask / FastAPI / Node.js	Orchestrates the calls between components
+Storage	AWS S3 / Firebase	Store uploaded images and audio files
+
+ask if u need any api key
+Processing:
+
+microsoft/kosmos-2 interprets the image and generates a story or poem.
+
+Optional: The story is sent to coqui/xtts-v2 to synthesize audio.
+
+Output: Display the story and (optionally) play the audio narration.
+
+🎯 Use Cases:
+Turning memories into artistic narratives
+
+Creating audio-visual greeting cards
+
+Social media content generation
+
+Storytelling for children or visually impaired users
